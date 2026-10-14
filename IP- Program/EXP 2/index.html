@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamStay Hotel Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>🏨 DreamStay</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#booking">Book Now</a>
+        <a href="#history">My Bookings</a>
+        <a href="#admin">Admin</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Find Your Perfect Stay</h1>
+        <p>Comfort, luxury and unforgettable experiences.</p>
+
+        <form action="#rooms">
+            <input type="text" placeholder="Destination" required>
+            <input type="date" aria-label="Check-in date" required>
+            <input type="date" aria-label="Check-out date" required>
+            <select aria-label="Number of guests">
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+            </select>
+            <button type="submit">Search Rooms</button>
+        </form>
+    </div>
+</section>
+
+<main>
+
+<section id="rooms" class="section">
+    <h2>Our Room Types</h2>
+    <p class="subtitle">Choose a room that suits your needs.</p>
+
+    <div class="room-grid">
+
+        <article class="room-card">
+            <div class="room-image standard">🛏️</div>
+            <div class="room-info">
+                <h3>Standard Room</h3>
+                <p>Comfortable room with Wi-Fi and air conditioning.</p>
+                <p>👥 2 Guests | ❄️ AC | 📶 Wi-Fi</p>
+                <h3 class="price">₹1,500 / night</h3>
+                <span class="available">Availability: Check before booking</span>
+                <a class="btn" href="#booking">Book Room</a>
+            </div>
+        </article>
+
+        <article class="room-card">
+            <div class="room-image deluxe">🛋️</div>
+            <div class="room-info">
+                <h3>Deluxe Room</h3>
+                <p>Spacious room with modern furniture and a great view.</p>
+                <p>👥 2 Guests | 📺 TV | 📶 Wi-Fi</p>
+                <h3 class="price">₹2,500 / night</h3>
+                <span class="available">Availability: Check before booking</span>
+                <a class="btn" href="#booking">Book Room</a>
+            </div>
+        </article>
+
+        <article class="room-card">
+            <div class="room-image suite">🏡</div>
+            <div class="room-info">
+                <h3>Executive Suite</h3>
+                <p>Premium accommodation with a separate living area.</p>
+                <p>👥 3 Guests | 🛋️ Lounge | 📶 Wi-Fi</p>
+                <h3 class="price">₹4,000 / night</h3>
+                <span class="available">Availability: Check before booking</span>
+                <a class="btn" href="#booking">Book Room</a>
+            </div>
+        </article>
+
+        <article class="room-card">
+            <div class="room-image family">👨‍👩‍👧‍👦</div>
+            <div class="room-info">
+                <h3>Family Room</h3>
+                <p>A spacious room suitable for families and groups.</p>
+                <p>👥 4 Guests | 🛏️ Multiple Beds | 📶 Wi-Fi</p>
+                <h3 class="price">₹3,500 / night</h3>
+                <span class="available">Availability: Check before booking</span>
+                <a class="btn" href="#booking">Book Room</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section id="booking" class="section light">
+    <h2>Book Your Room</h2>
+    <p class="subtitle">Enter your details to request a reservation.</p>
+
+    <form class="form-card">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Room Type</label>
+        <select required>
+            <option value="">Select a room</option>
+            <option>Standard Room</option>
+            <option>Deluxe Room</option>
+            <option>Executive Suite</option>
+            <option>Family Room</option>
+        </select>
+
+        <label>Check-in Date</label>
+        <input type="date" required>
+
+        <label>Check-out Date</label>
+        <input type="date" required>
+
+        <label>Number of Guests</label>
+        <input type="number" min="1" max="10" value="2" required>
+
+        <label>Special Requests</label>
+        <textarea rows="3" placeholder="Any additional requests?"></textarea>
+
+        <button type="button">Confirm Booking</button>
+        <p class="note">Booking confirmation and payment require backend integration.</p>
+    </form>
+</section>
+
+<section id="history" class="section">
+    <h2>My Booking History</h2>
+    <div class="table-wrap">
+        <table>
+            <tr>
+                <th>Booking ID</th>
+                <th>Room Type</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>BK1001</td>
+                <td>Deluxe Room</td>
+                <td>20-11-2026</td>
+                <td>23-11-2026</td>
+                <td>Confirmed</td>
+                <td><button type="button" class="cancel">Cancel</button></td>
+            </tr>
+            <tr>
+                <td>BK1002</td>
+                <td>Standard Room</td>
+                <td>10-12-2026</td>
+                <td>12-12-2026</td>
+                <td>Pending</td>
+                <td><button type="button" class="edit">Modify</button></td>
+            </tr>
+        </table>
+    </div>
+    <p class="note">Bookings can be modified or cancelled up to 3 days before arrival, subject to the hotel's policy.</p>
+</section>
+
+<section id="account" class="section light">
+    <h2>User Account</h2>
+
+    <div class="account-grid">
+        <form class="form-card">
+            <h3>Register</h3>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Create Password" required>
+            <button type="button">Create Account</button>
+        </form>
+
+        <form class="form-card">
+            <h3>Login</h3>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="button">Login</button>
+        </form>
+
+        <form class="form-card">
+            <h3>My Profile</h3>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+            <input type="tel" placeholder="Phone Number">
+            <button type="button">Update Profile</button>
+        </form>
+    </div>
+</section>
+
+<section id="admin" class="section">
+    <h2>Administrator Dashboard</h2>
+    <p class="subtitle">Manage room inventory, bookings and hotel information.</p>
+
+    <div class="admin-grid">
+
+        <div class="admin-card">
+            <h3>🛏️ Manage Room Inventory</h3>
+            <label>Room Type</label>
+            <select>
+                <option>Standard Room</option>
+                <option>Deluxe Room</option>
+                <option>Executive Suite</option>
+                <option>Family Room</option>
+            </select>
+            <label>Room Quantity</label>
+            <input type="number" min="0" placeholder="Enter quantity">
+            <label>Price Per Night (₹)</label>
+            <input type="number" min="0" placeholder="Enter price">
+            <button type="button">Update Room</button>
+        </div>
+
+        <div class="admin-card">
+            <h3>📋 Manage Bookings</h3>
+            <input type="text" placeholder="Booking ID">
+            <input type="text" placeholder="Customer Name">
+            <label>Check-in</label>
+            <input type="date">
+            <label>Check-out</label>
+            <input type="date">
+            <button type="button">Update Booking</button>
+            <button type="button" class="cancel">Cancel Booking</button>
+        </div>
+
+        <div class="admin-card">
+            <h3>👤 Manage Users</h3>
+            <input type="text" placeholder="Customer ID or email">
+            <button type="button">Search User</button>
+            <button type="button" class="edit">Update User</button>
+        </div>
+
+        <div class="admin-card">
+            <h3>📝 Edit Website Pages</h3>
+            <select>
+                <option>About Us</option>
+                <option>Room Information</option>
+                <option>Contact Us</option>
+                <option>Customer Service Q&A</option>
+                <option>Local Travel Guide</option>
+                <option>Privacy Policy</option>
+            </select>
+            <textarea rows="4" placeholder="Enter page content"></textarea>
+            <button type="button">Save Page</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="section light">
+    <h2>About Us</h2>
+    <p>DreamStay offers comfortable accommodation, friendly service and convenient room booking. Our goal is to make every guest's stay enjoyable and relaxing.</p>
+</section>
+
+<section id="faq" class="section">
+    <h2>Customer Service Q&A</h2>
+
+    <details>
+        <summary>How can I book a room?</summary>
+        <p>Select a room, enter your dates and guest details, and submit your booking request.</p>
+    </details>
+
+    <details>
+        <summary>Can I cancel my booking?</summary>
+        <p>Our sample policy allows cancellation up to 3 days before arrival. Actual cancellation depends on the hotel's terms.</p>
+    </details>
+
+    <details>
+        <summary>How can I check room availability?</summary>
+        <p>Enter your destination and travel dates in the search section. Live availability requires a connected booking system.</p>
+    </details>
+
+    <details>
+        <summary>How do I contact customer support?</summary>
+        <p>Use the contact form below to send an enquiry.</p>
+    </details>
+</section>
+
+<section id="travel" class="section light">
+    <h2>Local Travel Guide</h2>
+    <p>Plan your visit by exploring nearby tourist attractions, restaurants, public transport and shopping areas. Ask the hotel reception for local directions and travel assistance.</p>
+</section>
+
+<section id="privacy" class="section">
+    <h2>Privacy Policy</h2>
+    <p>Guest information should be collected only for legitimate booking and customer service purposes. A live website must securely protect personal details, restrict unauthorized access and clearly explain its data retention and privacy practices.</p>
+</section>
+
+<section id="contact" class="section light">
+    <h2>Contact Us</h2>
+    <form class="form-card">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="button">Send Message</button>
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 DreamStay Hotel Booking | All Rights Reserved</p>
+    <p><a href="#about">About</a> |
+       <a href="#faq">FAQs</a> |
+       <a href="#travel">Travel Guide</a> |
+       <a href="#privacy">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>

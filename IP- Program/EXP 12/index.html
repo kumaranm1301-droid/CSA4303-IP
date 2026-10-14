@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsureEasy - Insurance Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🛡️ InsureEasy</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#policies">Policies</a>
+      <a href="#login">Login</a>
+      <a href="#register">Agent Register</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Insurance Made Simple</h1>
+    <p>Compare policies, manage customers, and track premium payments in one place.</p>
+    <a href="#policies" class="hero-button">Explore Policies</a>
+  </section>
+
+  <main>
+    <section class="section" id="policies">
+      <h2>Insurance Policies</h2>
+      <div class="policy-grid">
+        <article class="policy-card">
+          <h3>🏥 Health Insurance</h3>
+          <p>Financial support for eligible medical expenses.</p>
+          <p><strong>From ₹5,000/year</strong></p>
+        </article>
+        <article class="policy-card">
+          <h3>🚗 Auto Insurance</h3>
+          <p>Protection for eligible vehicle-related risks.</p>
+          <p><strong>From ₹3,000/year</strong></p>
+        </article>
+        <article class="policy-card">
+          <h3>🏠 Home Insurance</h3>
+          <p>Coverage options for homes and property.</p>
+          <p><strong>From ₹2,500/year</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section panel" id="login">
+      <h2>Login</h2>
+      <p class="hint">Choose your role and enter your demo credentials.</p>
+      <form id="loginForm">
+        <label for="loginRole">Login as</label>
+        <select id="loginRole" required>
+          <option value="user">Customer</option>
+          <option value="agent">Agent</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <label for="loginUsername">Username</label>
+        <input id="loginUsername" required placeholder="Enter username">
+
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" required placeholder="Enter password">
+
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginMessage" role="status"></p>
+      <p class="hint">Demo admin login: <strong>admin</strong> / <strong>admin123</strong></p>
+    </section>
+
+    <section class="section panel" id="register">
+      <h2>Agent Registration</h2>
+      <form id="agentForm">
+        <label for="agentName">Full Name</label>
+        <input id="agentName" required placeholder="Agent name">
+
+        <label for="agentUsername">Username</label>
+        <input id="agentUsername" required placeholder="Create username">
+
+        <label for="agentPassword">Password</label>
+        <input id="agentPassword" type="password" minlength="6" required placeholder="At least 6 characters">
+
+        <label for="agentPhone">Phone Number</label>
+        <input id="agentPhone" type="tel" required placeholder="Contact number">
+
+        <label for="agentCompany">Company / Agency</label>
+        <input id="agentCompany" required placeholder="Agency name">
+
+        <button type="submit">Register as Agent</button>
+      </form>
+      <p id="agentMessage" role="status"></p>
+    </section>
+
+    <section class="section dashboard" id="dashboard" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <h2 id="dashboardTitle">Dashboard</h2>
+          <p id="welcomeMessage"></p>
+        </div>
+        <button id="logoutButton" class="secondary">Logout</button>
+      </div>
+
+      <div id="dashboardContent"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 InsureEasy | Insurance Management System</p>
+    <p class="hint">Educational demo only. No real insurance purchases or SMS messages are sent.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlossomGifts - Flowers & Gifts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="#home">🌸 BlossomGifts</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#cart">Cart (<span id="cartCount">0</span>)</a>
+      <a href="#account">Account</a>
+      <a href="#admin">Admin</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <p class="eyebrow">MAKE EVERY MOMENT SPECIAL</p>
+      <h1>Send Love with Flowers & Gifts</h1>
+      <p>Beautiful flowers, thoughtful gifts, and unforgettable surprises.</p>
+      <a href="#shop" class="button">Shop Now</a>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <button class="category-card" onclick="chooseCategory('Flowers')">💐<span>Flowers</span></button>
+      <button class="category-card" onclick="chooseCategory('Gift Baskets')">🎁<span>Gift Baskets</span></button>
+      <button class="category-card" onclick="chooseCategory('Personalized Gifts')">💝<span>Personalized Gifts</span></button>
+      <button class="category-card" onclick="chooseCategory('Chocolates')">🍫<span>Chocolates</span></button>
+      <button class="category-card" onclick="chooseCategory('Plants')">🪴<span>Plants</span></button>
+      <button class="category-card" onclick="chooseCategory('All')">🛍️<span>All Gifts</span></button>
+    </div>
+  </section>
+
+  <section class="section shop-section" id="shop">
+    <h2>Find the Perfect Gift</h2>
+    <div class="filters">
+      <input id="searchInput" placeholder="Search flowers or gifts..." oninput="renderProducts()">
+      <select id="categoryFilter" onchange="renderProducts()">
+        <option value="All">All Categories</option>
+        <option>Flowers</option>
+        <option>Gift Baskets</option>
+        <option>Personalized Gifts</option>
+        <option>Chocolates</option>
+        <option>Plants</option>
+      </select>
+      <select id="occasionFilter" onchange="renderProducts()">
+        <option value="All">All Occasions</option>
+        <option>Birthday</option>
+        <option>Anniversary</option>
+        <option>Wedding</option>
+        <option>Thank You</option>
+        <option>Congratulations</option>
+        <option>Everyday</option>
+      </select>
+      <select id="sortFilter" onchange="renderProducts()">
+        <option value="popular">Most Popular</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+    </div>
+    <div id="productList" class="product-grid"></div>
+  </section>
+
+  <section class="section cart-section" id="cart">
+    <h2>🛒 Your Shopping Cart</h2>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <p>Subtotal: <strong id="subtotal">₹0</strong></p>
+      <p>Discount: <strong id="discount">₹0</strong></p>
+      <h3>Total: <span id="grandTotal">₹0</span></h3>
+      <p class="hint">Use code <strong>BLOSSOM10</strong> for 10% off orders of ₹500 or more.</p>
+    </div>
+  </section>
+
+  <section class="section panel" id="account">
+    <h2>Customer Account</h2>
+    <p class="hint">Register or log in to place an order and view your orders.</p>
+    <div class="account-grid">
+      <form id="registerForm">
+        <h3>Create Account</h3>
+        <label for="regName">Full Name</label>
+        <input id="regName" required placeholder="Your name">
+        <label for="regEmail">Email</label>
+        <input id="regEmail" type="email" required placeholder="you@example.com">
+        <label for="regPassword">Password</label>
+        <input id="regPassword" type="password" minlength="6" required placeholder="At least 6 characters">
+        <button type="submit">Register</button>
+      </form>
+
+      <form id="loginForm">
+        <h3>Customer Login</h3>
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" required placeholder="Your email">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" required placeholder="Your password">
+        <button type="submit">Login</button>
+        <button type="button" class="secondary" onclick="logout()">Logout</button>
+      </form>
+    </div>
+    <p id="accountMessage" role="status"></p>
+    <p id="currentUser" class="hint">You are browsing as a guest.</p>
+  </section>
+
+  <section class="section panel" id="checkout">
+    <h2>Delivery & Checkout</h2>
+    <form id="checkoutForm" class="checkout-grid">
+      <label>Recipient Name
+        <input name="recipient" required placeholder="Recipient's full name">
+      </label>
+      <label>Delivery Address
+        <textarea name="address" required rows="2" placeholder="Full delivery address"></textarea>
+      </label>
+      <label>Delivery Date
+        <input id="deliveryDate" name="date" type="date" required>
+      </label>
+      <label>Delivery Time
+        <select name="time" required>
+          <option value="">Choose a time slot</option>
+          <option>9 AM - 12 PM</option>
+          <option>12 PM - 3 PM</option>
+          <option>3 PM - 6 PM</option>
+          <option>6 PM - 9 PM</option>
+        </select>
+      </label>
+      <label>Discount Code (optional)
+        <input name="coupon" placeholder="BLOSSOM10">
+      </label>
+      <label>Payment Method
+        <select name="payment" required>
+          <option value="">Choose payment method</option>
+          <option>Cash on Delivery</option>
+          <option>Demo UPI</option>
+          <option>Demo Card</option>
+        </select>
+      </label>
+      <p class="hint full">Demo checkout only. No actual payment is processed.</p>
+      <button class="full" type="submit">Place Order</button>
+    </form>
+    <p id="checkoutMessage" role="status"></p>
+  </section>
+
+  <section class="section" id="myOrders">
+    <h2>My Orders & Tracking</h2>
+    <div id="orderList"></div>
+  </section>
+
+  <section class="section panel" id="admin">
+    <h2>Administrator Login</h2>
+    <p class="hint">Demo credentials: username <strong>admin</strong>, password <strong>admin123</strong>.</p>
+    <form id="adminLoginForm">
+      <label for="adminUsername">Username</label>
+      <input id="adminUsername" required placeholder="Admin username">
+      <label for="adminPassword">Password</label>
+      <input id="adminPassword" type="password" required placeholder="Admin password">
+      <button type="submit">Admin Login</button>
+      <button type="button" class="secondary" onclick="adminLogout()">Admin Logout</button>
+    </form>
+    <p id="adminMessage" role="status"></p>
+
+    <div id="adminPanel" hidden>
+      <div class="admin-heading">
+        <h3>Manage Products</h3>
+        <p id="adminStats"></p>
+      </div>
+
+      <form id="productForm" class="admin-form">
+        <input type="hidden" name="id">
+        <label>Product Name
+          <input name="name" required placeholder="Product name">
+        </label>
+        <label>Category
+          <select name="category" required>
+            <option>Flowers</option>
+            <option>Gift Baskets</option>
+            <option>Personalized Gifts</option>
+            <option>Chocolates</option>
+            <option>Plants</option>
+          </select>
+        </label>
+        <label>Occasion
+          <select name="occasion" required>
+            <option>Birthday</option>
+            <option>Anniversary</option>
+            <option>Wedding</option>
+            <option>Thank You</option>
+            <option>Congratulations</option>
+            <option>Everyday</option>
+          </select>
+        </label>
+        <label>Subcategory
+          <input name="subcategory" required placeholder="e.g. Roses, Premium">
+        </label>
+        <label>Price (₹)
+          <input name="price" type="number" min="1" required placeholder="Price">
+        </label>
+        <label>Image URL
+          <input name="image" type="url" placeholder="https://example.com/image.jpg">
+        </label>
+        <label class="full">Description
+          <textarea name="description" rows="2" required placeholder="Product description"></textarea>
+        </label>
+        <div class="full">
+          <button type="submit">Save Product</button>
+          <button type="button" class="secondary" onclick="resetProductForm()">Clear Form</button>
+        </div>
+      </form>
+
+      <h3>Product Inventory</h3>
+      <div id="adminProducts"></div>
+
+      <h3>Customer Checkout Records</h3>
+      <div id="customerRecords"></div>
+
+      <h3>Manage Orders</h3>
+      <div id="adminOrders"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>🌸 BlossomGifts — Make every occasion beautiful.</p>
+    <p>© 2026 BlossomGifts. Educational demonstration website.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

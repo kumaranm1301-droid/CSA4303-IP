@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Finder | Find Your Dream Property</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🏡 Home Finder</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#properties">Properties</a>
+      <a href="#agents">Agents</a>
+      <a href="#account">Buyer Login</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Find a Place You'll Love</h1>
+      <p>Search houses, apartments, and lands that fit your needs and budget.</p>
+      <a class="button" href="#properties">Explore Properties</a>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <h2>Find Your Property</h2>
+    <div class="search-grid">
+      <input id="location" placeholder="Enter area or city">
+      <select id="propertyType">
+        <option value="">All Property Types</option>
+        <option>House</option>
+        <option>Apartment</option>
+        <option>Land</option>
+        <option>Commercial</option>
+      </select>
+      <input id="minPrice" type="number" placeholder="Minimum budget (₹)">
+      <input id="maxPrice" type="number" placeholder="Maximum budget (₹)">
+      <button onclick="searchProperties()">Search</button>
+      <button class="secondary" onclick="saveSearch()">Save Search</button>
+    </div>
+    <p id="searchMessage"></p>
+    <h3>Saved Search Criteria</h3>
+    <div id="savedSearches" class="saved-searches"></div>
+  </section>
+
+  <main>
+    <section id="properties" class="section">
+      <h2>Available Properties</h2>
+      <p class="subtitle">Explore properties and contact the owner or agent.</p>
+      <div id="propertyList" class="property-grid"></div>
+    </section>
+
+    <section class="section favorites-section">
+      <h2>❤️ Your Favourite Properties</h2>
+      <div id="favoritesList" class="property-grid"></div>
+    </section>
+
+    <section id="agents" class="section">
+      <h2>Find Agents & Companies</h2>
+      <input id="agentSearch" class="wide-input"
+             placeholder="Search agent or company name"
+             oninput="searchAgents()">
+      <div id="agentList" class="agent-grid"></div>
+    </section>
+
+    <section class="section">
+      <h2>Mortgage Calculator</h2>
+      <div class="calculator">
+        <input id="loanAmount" type="number" placeholder="Loan amount (₹)">
+        <input id="interestRate" type="number" placeholder="Annual interest rate (%)" value="8.5">
+        <input id="loanYears" type="number" placeholder="Loan period (years)" value="20">
+        <button onclick="calculateMortgage()">Calculate Monthly Payment</button>
+        <p id="mortgageResult"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Advertisements & Useful Links</h2>
+      <div class="ad-grid">
+        <div class="ad-card">
+          <h3>🏠 Property Loans</h3>
+          <p>Explore home loan options and compare offers.</p>
+          <a href="https://www.rbi.org.in/" target="_blank" rel="noopener">Visit RBI</a>
+        </div>
+        <div class="ad-card">
+          <h3>🗺️ Explore Locations</h3>
+          <p>Find areas and nearby facilities on a map.</p>
+          <a href="https://maps.google.com/" target="_blank" rel="noopener">Open Google Maps</a>
+        </div>
+        <div class="ad-card">
+          <h3>📋 Property Information</h3>
+          <p>Learn about property registration services.</p>
+          <a href="https://tnreginet.gov.in/" target="_blank" rel="noopener">TN Registration Portal</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="account" class="section account-section">
+      <h2>Buyer Login / Registration</h2>
+      <p>Create a demo account or enter your username to continue.</p>
+      <div class="login-box">
+        <input id="username" placeholder="Enter username">
+        <input id="password" type="password" placeholder="Enter password">
+        <button onclick="registerBuyer()">Register</button>
+        <button class="secondary" onclick="loginBuyer()">Login</button>
+        <p id="loginMessage"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Property Viewing Requests</h2>
+      <div id="viewingList"></div>
+    </section>
+
+    <section class="section">
+      <h2>Website Visitor Record</h2>
+      <p>Total visits on this browser: <strong id="visitorCount">0</strong></p>
+      <p class="note">Demo count stored in this browser only.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Home Finder | Find your perfect place.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

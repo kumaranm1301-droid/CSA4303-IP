@@ -1,0 +1,141 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f5fb;
+    color: #222;
+}
+
+header {
+    background: #12345a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    background: #2874b5;
+    color: white;
+    text-align: center;
+    padding: 50px 15px;
+}
+
+.container {
+    width: 85%;
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #00000015;
+}
+
+h2 {
+    color: #12345a;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button, .btn {
+    background: #2874b5;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+button:hover, .btn:hover {
+    background: #12345a;
+}
+
+.flight {
+    border: 1px solid #d5e2f3;
+    background: #f7faff;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.flight h3 {
+    color: #2874b5;
+}
+
+.container a:not(.btn) {
+    color: #2874b5;
+}
+
+footer {
+    background: #12345a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+        font-size: 13px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 18px;
+        box-sizing: border-box;
+    }
+}
+
+@media print {
+    header, footer, form, button, .hero, nav {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .container {
+        box-shadow: none;
+        width: 100%;
+    }
+}

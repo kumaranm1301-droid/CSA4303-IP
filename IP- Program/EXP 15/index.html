@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyToll - Online Toll Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>EasyToll</h1>
+    <p>Pay Before You Travel – Skip the Toll Queue!</p>
+</header>
+
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('register')">Register</button>
+    <button onclick="showSection('login')">Login</button>
+    <button onclick="showSection('wallet')">eWallet</button>
+    <button onclick="showSection('passes')">Toll Pass</button>
+    <button onclick="showSection('gate')">Toll Gate</button>
+    <button onclick="showSection('admin')">Admin</button>
+</nav>
+
+<main>
+
+<section id="home" class="section">
+    <h2>Welcome to EasyToll</h2>
+    <p>Pay your toll charges in advance and travel without waiting in long queues.</p>
+    <div class="cards">
+        <div class="card">Fast Online Payments</div>
+        <div class="card">Digital Toll Pass</div>
+        <div class="card">QR Code Verification</div>
+    </div>
+</section>
+
+<section id="register" class="section" hidden>
+    <h2>User Registration</h2>
+    <input id="regName" placeholder="Full Name">
+    <input id="regEmail" type="email" placeholder="Email">
+    <input id="regPassword" type="password" placeholder="Password">
+    <input id="vehicle" placeholder="Vehicle Number">
+    <button onclick="registerUser()">Register</button>
+</section>
+
+<section id="login" class="section" hidden>
+    <h2>Login</h2>
+    <select id="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="gate">Toll Gate User</option>
+    </select>
+    <input id="loginEmail" placeholder="Username / Email">
+    <input id="loginPassword" type="password" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
+    <p id="loginMessage"></p>
+</section>
+
+<section id="wallet" class="section" hidden>
+    <h2>eWallet</h2>
+    <h3>Balance: ₹<span id="balance">0</span></h3>
+    <input id="amount" type="number" placeholder="Enter amount">
+    <button onclick="addMoney()">Add Money</button>
+    <button onclick="payToll()">Pay Toll</button>
+    <h3>Transaction History</h3>
+    <ul id="transactions"></ul>
+</section>
+
+<section id="passes" class="section" hidden>
+    <h2>Toll Pass & eTicket</h2>
+    <input id="tollLocation" placeholder="Toll Gate Location">
+    <input id="tollFee" type="number" placeholder="Toll Fee (₹)">
+    <button onclick="buyTicket()">Buy Toll eTicket</button>
+    <button onclick="applyPass()">Apply / Renew Toll Pass</button>
+    <div id="passDetails"></div>
+</section>
+
+<section id="admin" class="section" hidden>
+    <h2>Admin Dashboard</h2>
+    <p>Approve toll passes and manage toll details.</p>
+    <input id="newToll" placeholder="Toll Gate Name">
+    <input id="newFee" type="number" placeholder="Toll Fee (₹)">
+    <button onclick="createToll()">Create Toll Details</button>
+    <h3>Toll Gates</h3>
+    <ul id="tollList"></ul>
+    <h3>Pass Applications</h3>
+    <div id="applications"></div>
+</section>
+
+<section id="gate" class="section" hidden>
+    <h2>Toll Gate Verification</h2>
+    <input id="qrInput" placeholder="Enter Pass / Ticket ID">
+    <button onclick="verifyQR()">Scan / Verify QR</button>
+    <p id="verifyMessage"></p>
+    <h3>Update Toll Location</h3>
+    <input id="gateLocation" placeholder="Current Toll Location">
+    <button onclick="updateLocation()">Update Location</button>
+    <p id="locationMessage"></p>
+</section>
+
+<section class="section">
+    <h2>Recent Activities</h2>
+    <ul id="activityList"></ul>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 EasyToll | Safe, Fast and Convenient Toll Payments</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f2f6f3;
+    color: #26352b;
+}
+
+header {
+    background: #218c5a;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background: #174d35;
+    padding: 12px;
+    text-align: center;
+}
+
+nav button {
+    margin: 5px;
+    background: white;
+    color: #174d35;
+}
+
+main {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+.section {
+    background: white;
+    padding: 22px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #cccccc;
+}
+
+input, select {
+    padding: 10px;
+    margin: 6px 3px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 14px;
+    background: #218c5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #146b40;
+}
+
+li, .product, .order {
+    background: #eef7f0;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    overflow-wrap: anywhere;
+}
+
+li button, .product button, .order button {
+    margin: 5px;
+}
+
+footer {
+    background: #174d35;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    nav button {
+        width: 95%;
+    }
+
+    input, select {
+        width: 95%;
+    }
+}

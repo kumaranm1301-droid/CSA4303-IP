@@ -1,0 +1,118 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f5fa;
+    color: #243447;
+}
+
+header {
+    background: #1769aa;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+nav {
+    background: #123b60;
+    padding: 12px;
+    text-align: center;
+}
+
+button {
+    background: #1683cc;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d568b;
+}
+
+nav button {
+    background: white;
+    color: #123b60;
+}
+
+main {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 12px;
+}
+
+.section {
+    background: white;
+    margin-bottom: 20px;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ccd5df;
+}
+
+input, select {
+    display: block;
+    width: 95%;
+    max-width: 420px;
+    box-sizing: border-box;
+    padding: 11px;
+    margin: 10px 0;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card {
+    flex: 1;
+    min-width: 140px;
+    background: #e1f2ff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #eef6fc;
+    border-radius: 5px;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    background: #123b60;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    nav button {
+        width: 90%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}
